@@ -1,0 +1,7 @@
+.claude/
+.papers/
+.smart-env/
+.obsidian/workspace.json
+.trash/
+.DS_Store
+graphify-out/
