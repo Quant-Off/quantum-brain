@@ -1,4 +1,4 @@
-# CLAUDE.md - 양자정보과학 제2의 뇌 (Zettelkasten x PARA)
+# 양자정보과학 제2의 뇌 (Zettelkasten x PARA) 지침
 
 이 파일은 AI 에이전트가 이 Obsidian vault에서 노트를 생성하고 수정하고 연결할 때 반드시 따르는 운영 지침이다.
 사람이 읽는 본문 서사는 자연스럽게, AI가 파싱하는 구조와 메타데이터는 기계적으로 일관되게 유지한다.

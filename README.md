@@ -1,6 +1,7 @@
 # 양자정보과학 제2의 뇌
 
 [![Qu4nt-Space-Discord](https://img.shields.io/badge/Qu4nt_Space-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/9utg4hp3m8)
+[![Total FIles|147](https://img.shields.io/badge/90-Total%20Files-blue?style=for-the-badge)](https://github.com/Quant-Off/quantum-brain)
 
 ![quantum-information](assets/main.png)
 
