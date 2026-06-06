@@ -9,7 +9,7 @@ tags:
   - concept/measurement
   - concept/entanglement
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-05
 up: ""
 ---
 
@@ -34,8 +34,10 @@ up: ""
 
 ## 동역학과 측정 (공준)
 - [[Unitary Evolution]] 닫힌 계의 결정적 시간 발전
+- [[Heisenberg Picture]] 상태 대신 연산자를 시간 발전시키는 동등한 기술 그림
 - [[Observable (Hermitian Operator)]] 측정 가능량을 나타내는 에르미트 연산자
 - [[Quantum Measurement]] 측정 공준과 상태 붕괴
+- [[Quantum Instrument]] 측정 결과와 사후 상태를 함께 기술하는 일반화된 측정 형식
 - [[Born Rule]] 측정 결과의 확률 규칙
 - [[Heisenberg Uncertainty Principle]] 비가환 관측량의 동시 결정 한계
 

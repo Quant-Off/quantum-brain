@@ -10,7 +10,7 @@ tags:
   - concept/entanglement
   - concept/open-system
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-05
 up: "[[MOC - Quantum Error Correction]]"
 related:
   - "[[Quantum Decoherence]]"
@@ -18,6 +18,13 @@ related:
   - "[[Quantum Entanglement]]"
   - "[[양자 하드웨어 로드맵 추적]]"
   - "[[No-Cloning Theorem]]"
+  - "[[Stabilizer Code]]"
+  - "[[Code Distance]]"
+  - "[[Knill-Laflamme Conditions]]"
+  - "[[Logical Qubit]]"
+  - "[[Syndrome Measurement]]"
+  - "[[Surface Code]]"
+  - "[[Fault-Tolerant Quantum Computation]]"
 source:
   - "Nielsen & Chuang, Quantum Computation and Quantum Information, Ch.10"
   - "Shor (1995), arXiv:quant-ph/9512018"
@@ -40,16 +47,16 @@ $$ \alpha \lvert 0 \rangle + \beta \lvert 1 \rangle \;\longmapsto\; \alpha \lver
 ### 신드롬 측정: 상태를 보지 않고 오류만 본다
 이 부호의 묘미는 정정 과정이 진폭 $\alpha, \beta$를 전혀 들여다보지 않는다는 데 있다. 대신 이웃한 큐비트들의 패리티만 측정한다. 가령 첫째와 둘째 큐비트의 패리티 $Z_1 Z_2$와 둘째와 셋째 큐비트의 패리티 $Z_2 Z_3$를 측정하면, 그 결과는 어느 큐비트에 비트반전이 일어났는지를 알려줄 뿐 어떤 진폭이 실렸는지는 누설하지 않는다. 이렇게 오류의 위치만 진단하는 측정값의 묶음을 신드롬(syndrome)이라 부른다.
 
-신드롬 측정이 가능한 이유는 패리티 연산자가 부호공간 전체를 같은 고윳값으로 안정시키기 때문이다. 정정용 측정 연산자들은 서로 교환하며 부호공간을 고윳값 $+1$로 고정하는 [[Pauli Matrices|파울리 연산자]]들의 곱으로 만들어지는데, 이 연산자 집합을 안정자(stabilizer)라 하고 그 형식체계가 [[Stabilizer Formalism|안정자 형식체계]]다. 오류가 없으면 모든 신드롬이 $+1$이고, 오류 $E$가 생기면 $E$와 반교환하는 안정자에서만 $-1$이 나와 오류의 종류와 위치를 가리킨다.
+신드롬 측정이 가능한 이유는 패리티 연산자가 부호공간 전체를 같은 고윳값으로 안정시키기 때문이다. 정정용 측정 연산자들은 서로 교환하며 부호공간을 고윳값 $+1$로 고정하는 [[Pauli Matrices|파울리 연산자]]들의 곱으로 만들어지는데, 이 연산자 집합을 안정자(stabilizer)라 하고 그 형식체계가 [[Stabilizer Code|안정자 형식체계]]다. 오류가 없으면 모든 신드롬이 $+1$이고, 오류 $E$가 생기면 $E$와 반교환하는 안정자에서만 $-1$이 나와 오류의 종류와 위치를 가리킨다. 이 비파괴 측정 절차 자체는 [[Syndrome Measurement|신드롬 측정]]으로 따로 다룬다.
 
 ### 오류의 이산화
 양자 잡음은 연속적인 작은 회전까지 포함해 무한히 많아 보이지만, 양자 오류정정은 모든 단일 큐비트 오류를 [[Pauli Matrices|파울리 연산자]] $\{I, X, Y, Z\}$의 네 가지로 환원한다. 임의의 단일 큐비트 잡음 연산은 이 기저로 전개되고, 신드롬 측정이라는 사영이 그 중첩을 한 파울리 오류로 붕괴시키기 때문이다. 비트반전 $X$, 위상반전 $Z$, 그리고 둘이 함께 일어나는 $Y = iXZ$만 정정하면 연속 잡음 전체가 디지털 오류처럼 정정된다. 이 이산화가 양자 오류정정을 실행 가능하게 만드는 결정적 단순화다.
 
-비트반전과 위상반전을 동시에 막으려면 두 부호를 결합한다. Shor의 아홉 큐비트 부호는 비트반전 부호와 위상반전 부호를 겹쳐 쌓아 임의의 단일 큐비트 오류를 모두 정정하는 최초의 완전한 양자 부호였다. 부호가 정정할 수 있는 오류의 한계는 부호 거리 $d$로 정해지며, $d$ 이하의 무게를 갖는 모든 오류를 구별할 때 $t = \lfloor (d-1)/2 \rfloor$개까지의 오류를 정정한다. 부호의 핵심 지표는 다음 삼중항으로 요약된다.
+비트반전과 위상반전을 동시에 막으려면 두 부호를 결합한다. Shor의 아홉 큐비트 부호는 비트반전 부호와 위상반전 부호를 겹쳐 쌓아 임의의 단일 큐비트 오류를 모두 정정하는 최초의 완전한 양자 부호였다. 부호가 정정할 수 있는 오류의 한계는 [[Code Distance|부호 거리]] $d$로 정해지며, $d$ 이하의 무게를 갖는 모든 오류를 구별할 때 $t = \lfloor (d-1)/2 \rfloor$개까지의 오류를 정정한다. 부호의 핵심 지표는 다음 삼중항으로 요약된다.
 
 $$ [[n, k, d]] $$
 
-여기서 $n$은 물리 큐비트 수, $k$는 부호화된 논리 큐비트 수, $d$는 거리다. 정정 가능 조건은 Knill과 Laflamme의 부호화 조건으로 정식화되어, 오류 집합 $\{E_a\}$에 대해 $\langle i_L \vert E_a^\dagger E_b \vert j_L \rangle = C_{ab}\, \delta_{ij}$가 성립하면 그 부호로 해당 오류들을 정정할 수 있음을 보장한다.
+여기서 $n$은 물리 큐비트 수, $k$는 부호화된 [[Logical Qubit|논리 큐비트]] 수, $d$는 거리다. 정정 가능 조건은 [[Knill-Laflamme Conditions|닐 라플람 조건]]으로 정식화되어, 오류 집합 $\{E_a\}$에 대해 $\langle i_L \vert E_a^\dagger E_b \vert j_L \rangle = C_{ab}\, \delta_{ij}$가 성립하면 그 부호로 해당 오류들을 정정할 수 있음을 보장한다.
 
 ## 흐름
 ```mermaid
@@ -62,7 +69,7 @@ flowchart LR
 ```
 
 ## 결함허용과 임계값
-물리적 오류정정만으로는 충분하지 않다. 신드롬을 재는 게이트와 측정 자체도 오류를 일으키므로, 정정 과정이 오류를 줄이기는커녕 늘릴 위험이 있다. 이를 막는 설계 원칙이 결함허용(fault tolerance)이며, 한 부품의 오류가 한 부호 블록 안에서 여러 오류로 번지지 않도록 회로를 구성한다. 여기서 임계값 정리(threshold theorem)가 결정적이다. 물리적 오류율이 어떤 임계값 $p_{\text{th}}$ 아래로 내려가면, 부호를 겹겹이 연접하거나 거리 $d$를 키울수록 논리 오류율을 임의로 낮출 수 있다.
+물리적 오류정정만으로는 충분하지 않다. 신드롬을 재는 게이트와 측정 자체도 오류를 일으키므로, 정정 과정이 오류를 줄이기는커녕 늘릴 위험이 있다. 이를 막는 설계 원칙이 [[Fault-Tolerant Quantum Computation|결함허용]](fault tolerance)이며, 한 부품의 오류가 한 부호 블록 안에서 여러 오류로 번지지 않도록 회로를 구성한다. 여기서 [[Quantum Threshold Theorem|임계값 정리]](threshold theorem)가 결정적이다. 물리적 오류율이 어떤 임계값 $p_{\text{th}}$ 아래로 내려가면, 부호를 겹겹이 연접하거나 거리 $d$를 키울수록 논리 오류율을 임의로 낮출 수 있다.
 
 $$ p_L \sim \left( \frac{p}{p_{\text{th}}} \right)^{\lfloor (d+1)/2 \rfloor} $$
 
@@ -79,5 +86,10 @@ $$ p_L \sim \left( \frac{p}{p_{\text{th}}} \right)^{\lfloor (d+1)/2 \rfloor} $$
 - [[Quantum Entanglement]] 논리 정보를 여러 물리 큐비트의 얽힘 패턴에 분산해 숨기는 부호화의 토대
 - [[No-Cloning Theorem]] 단순 복제 다수결을 불가능하게 만들어 신드롬 기반 정정이라는 우회 설계를 강제하는 제약
 - [[양자 하드웨어 로드맵 추적]] 물리 큐비트에서 보호된 논리 큐비트로 넘어가는 진전을 추적하며 양자 오류정정 성숙도를 핵심 지표로 삼는 영역
-- [[Stabilizer Formalism]] 안정자 연산자로 부호공간과 신드롬을 기술하는 형식체계(작성 예정)
-- [[Surface Code]] 격자 위 안정자 부호로 결함허용 구현의 표준 후보(작성 예정)
+- [[Stabilizer Code]] 안정자 연산자로 부호공간과 신드롬을 기술하는 형식론이자 거의 모든 실용 부호의 공통 언어
+- [[Code Distance]] 정정 가능한 오류 무게를 한 숫자로 규정해 부호의 품질을 비교하는 척도
+- [[Knill-Laflamme Conditions]] 어떤 부호가 어떤 오류를 정정할 수 있는지를 판정하는 필요충분조건
+- [[Logical Qubit]] 물리 큐비트 다발을 부호공간으로 부호화해 얻는 보호된 정보 단위
+- [[Syndrome Measurement]] 데이터를 붕괴시키지 않고 안정자만 측정해 오류 흔적을 비파괴로 추출하는 절차
+- [[Fault-Tolerant Quantum Computation]] 정적 보호를 넘어 능동적 논리 연산까지 오류 비확산으로 떠받치는 상위 계층
+- [[Surface Code]] 격자 위 안정자 부호로 결함허용 구현의 표준 후보

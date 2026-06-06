@@ -9,7 +9,7 @@ tags:
   - qkd/e91
   - concept/formalism
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-05
 up: "[[MOC - Foundations of Quantum Information]]"
 ---
 
@@ -27,14 +27,18 @@ up: "[[MOC - Foundations of Quantum Information]]"
 - [[Partial Trace]] 복합계에서 부분계 상태를 얻는 축소 연산
 - [[Quantum Measurement]] 상태 붕괴와 정보 추출의 측정 공준
 - [[No-Cloning Theorem]] 임의 미지 상태 복제 불가라는 근본 한계
+- [[Holevo Bound]] 양자 상태에서 추출 가능한 고전 정보량의 상한
 
 ## 얽힘 자원과 응용
 - [[Quantum Teleportation]] 얽힘과 고전 통신으로 미지 상태를 옮기는 프로토콜
 - [[Superdense Coding]] 얽힘을 소비해 한 큐비트로 두 고전 비트를 전송하는 부호화
+- [[Entanglement Distillation]] 잡음 섞인 다수의 얽힘 쌍에서 고순도 얽힘을 정제하는 절차
+- [[Entanglement Swapping]] 직접 상호작용 없이 떨어진 두 주체 사이에 얽힘을 매개하는 기법
 
 ## QKD 연계와 장거리 양자 통신
 - [[Device-Independent Cryptography]] 측정 통계만으로 보안을 증명하는 장치 독립 암호
 - [[Quantum Repeater]] 얽힘 교환과 정제로 거리 한계를 넘기는 양자 중계기
+- [[Quantum Memory]] 얽힘을 동기화할 때까지 양자 상태를 저장하는 중계기의 핵심 요소
 - [[Cascade Protocol]] 키 합의 후 오류를 대화형으로 정정하는 정보 조정 프로토콜
 
 ## 관련 MOC

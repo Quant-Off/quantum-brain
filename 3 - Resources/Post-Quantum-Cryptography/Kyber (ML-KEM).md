@@ -1,6 +1,6 @@
 ---
 title: Kyber (ML-KEM)
-aliases: [ML-KEM, CRYSTALS-Kyber, 키버, ML-KEM-768, 모듈격자 KEM]
+aliases: [ML-KEM, CRYSTALS-Kyber, 키버, ML-KEM-768, 모듈격자 KEM, FIPS 203]
 type: concept
 status: budding
 domain: post-quantum-cryptography
@@ -10,7 +10,7 @@ tags:
   - nist/fips-203
   - migration/hybrid
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-05
 up: "[[MOC - Post-Quantum Cryptography]]"
 related:
   - "[[PQC 전이 감시]]"
@@ -20,6 +20,8 @@ related:
   - "[[HQC]]"
   - "[[Shor's Algorithm]]"
   - "[[Crypto-Agility]]"
+  - "[[Key Encapsulation Mechanism]]"
+  - "[[Fujisaki-Okamoto Transform]]"
 source:
   - "NIST FIPS 203"
 confidence: high
@@ -77,3 +79,5 @@ sequenceDiagram
 - [[HQC]] 격자 가정을 보완하는 코드 기반 KEM 백업
 - [[Shor's Algorithm]] Kyber가 대체하려는 위협, 기존 공개키를 다항 시간에 파훼
 - [[Crypto-Agility]] Kyber와 후속 알고리즘 사이의 교체를 가능케 하는 설계 원칙
+- [[Key Encapsulation Mechanism]] Kyber가 구현하는 캡슐화 기반 키 확립의 일반 정의
+- [[Fujisaki-Okamoto Transform]] IND-CPA 격자 암호를 IND-CCA2 KEM으로 끌어올리는 데 쓰는 변환

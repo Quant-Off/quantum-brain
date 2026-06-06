@@ -1,6 +1,6 @@
 ---
 title: SPHINCS+ (SLH-DSA)
-aliases: [SLH-DSA, SPHINCS+, 스핑크스, 해시 기반 무상태 서명, Stateless Hash-Based Signature]
+aliases: [SLH-DSA, SPHINCS+, 스핑크스, 해시 기반 무상태 서명, Stateless Hash-Based Signature, FIPS 205]
 type: concept
 status: budding
 domain: post-quantum-cryptography

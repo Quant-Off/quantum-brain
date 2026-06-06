@@ -9,13 +9,14 @@ tags:
   - concept/teleportation
   - concept/measurement
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-05
 up: "[[MOC - Quantum Information Theory]]"
 related:
   - "[[Bell States]]"
   - "[[Quantum Entanglement]]"
   - "[[No-Cloning Theorem]]"
   - "[[Superdense Coding]]"
+  - "[[Entanglement Swapping]]"
 source:
   - "Bennett et al. 1993, Phys. Rev. Lett. 70, 1895"
 confidence: high
@@ -77,3 +78,4 @@ sequenceDiagram
 - [[No-Cloning Theorem]] 원본이 측정으로 파괴되어 사본이 늘지 않으므로 복제 금지와 충돌하지 않음을 보이는 맥락
 - [[Superdense Coding]] 같은 벨 쌍을 반대로 활용해 큐비트로 고전 비트를 보내는 쌍대 프로토콜
 - [[Pauli Matrices]] 측정 결과에 따라 밥이 적용하는 보정 연산의 집합
+- [[Entanglement Swapping]] 옮길 상태가 다른 입자와 얽힌 절반인 경우에 해당하는 원격전송의 특수 사례

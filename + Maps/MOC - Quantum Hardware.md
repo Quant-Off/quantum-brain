@@ -9,7 +9,7 @@ tags:
   - hardware/trapped-ion
   - hardware/photonic
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-05
 up: "[[MOC - Foundations of Quantum Information]]"
 ---
 
@@ -27,6 +27,9 @@ up: "[[MOC - Foundations of Quantum Information]]"
 - [[Superconducting Qubit]] 조셉슨 접합 기반 초전도 회로 큐비트
 - [[Trapped-Ion Qubit]] 전자기 트랩에 가둔 이온의 내부 준위 큐비트
 - [[Photonic Qubit]] 광자의 편광이나 경로 자유도를 쓰는 큐비트
+
+## 소자와 구성 요소
+- [[Josephson Junction]] 초전도 큐비트의 비선형성을 제공하는 조셉슨 접합 소자
 
 ## 공통 한계와 과제
 - [[Quantum Decoherence]] 환경 결합으로 결맞음을 잃는 모든 하드웨어의 핵심 장벽

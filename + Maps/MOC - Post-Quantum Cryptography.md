@@ -11,7 +11,7 @@ tags:
   - threat/harvest-now-decrypt-later
   - migration/hybrid
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-05
 up: ""
 ---
 
@@ -32,14 +32,29 @@ up: ""
 - [[Hybrid Key Exchange]] 고전 알고리즘과 PQC를 병합하는 전이기 배치
 - [[Crypto-Agility]] 알고리즘 교체를 가능케 하는 설계 원칙
 
+## 일반 구성 요소와 변환
+- [[Key Encapsulation Mechanism]] 공개키로 공유 비밀을 캡슐화하는 일반 KEM 추상
+- [[Fujisaki-Okamoto Transform]] IND-CPA 방식을 IND-CCA2 KEM으로 끌어올리는 일반 변환
+
+## 해시 기반 서명 내부 구조
+- [[WOTS+]] SPHINCS+의 잎을 이루는 일회용 윈터니츠 서명
+- [[FORS]] 메시지 일부를 임의 부분집합으로 서명하는 소수 무작위 서명
+- [[XMSS]] 머클 트리로 WOTS+ 다수를 묶는 상태형 해시 서명
+- [[Hypertree]] XMSS 층을 쌓아 무상태 서명을 가능케 하는 다층 인증 트리
+
+## 하이브리드 전이 구성 요소
+- [[ECDH]] 전이기 하이브리드에서 병합되는 고전 타원곡선 키 교환
+- [[X25519MLKEM768]] X25519와 ML-KEM-768을 병합하는 표준 하이브리드 KEM 조합
+- [[HKDF]] 병합한 공유 비밀에서 키를 유도하는 추출 확장 함수
+
 ## 표준
 - [[FIPS 203]] ML-KEM 표준
 - [[FIPS 204]] ML-DSA 표준
 - [[FIPS 205]] SLH-DSA 표준
-- [[NIST IR 8547]] 기존 공개키 알고리즘의 전이 일정
+- [[@NIST2024 - IR 8547|NIST IR 8547]] 기존 공개키 알고리즘의 전이 일정을 정리한 문헌 노트
 - [[CNSA 2.0]] 국가안보시스템 PQC 전환 요구
 
-이 표준 항목들은 대부분 선링크이며, 향후 단일 출처 문헌 노트로 채운다.
+이 표준 항목 중 일부는 아직 선링크이며, 향후 단일 출처 문헌 노트로 채운다. NIST IR 8547은 이미 문헌 노트로 작성되었다.
 
 ## 위협과 전이 전략
 - [[Shor's Algorithm]] 공개키 암호를 다항 시간에 파훼

@@ -10,7 +10,7 @@ tags:
   - hardware/superconducting
   - concept/fault-tolerance
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-05
 up: "[[MOC - Quantum Error Correction]]"
 related:
   - "[[양자 하드웨어 로드맵 추적]]"
@@ -19,6 +19,12 @@ related:
   - "[[Quantum Decoherence]]"
   - "[[Qubit]]"
   - "[[Superconducting Qubit]]"
+  - "[[Logical Qubit]]"
+  - "[[Code Distance]]"
+  - "[[Syndrome Measurement]]"
+  - "[[Decoder]]"
+  - "[[Minimum-Weight Perfect Matching]]"
+  - "[[Fault-Tolerant Quantum Computation]]"
 source:
   - "Fowler et al., Surface codes: Towards practical large-scale quantum computation, Phys. Rev. A 86, 032324 (2012), DOI: 10.1103/PhysRevA.86.032324"
   - "Kitaev, Fault-tolerant quantum computation by anyons, Ann. Phys. 303, 2003"
@@ -34,7 +40,7 @@ Surface Code는 [[Stabilizer Code|안정자 부호]]의 한 종류로, 데이터
 
 $$ A_v = \prod_{i \in v} X_i, \qquad B_p = \prod_{i \in p} Z_i $$
 
-모든 안정자는 서로 가환이므로 동시에 측정할 수 있고, 측정 결과(신드롬)는 데이터 큐비트를 직접 건드리지 않은 채 오류의 흔적만 드러낸다. 오류가 없으면 모든 안정자의 고유값은 $+1$이고, 어딘가에서 $-1$이 관측되면 그 부근에 오류가 일어났다는 신호가 된다. 단일 비트반전 오류나 위상반전 오류는 격자 위에서 끝점 쌍의 형태로 신드롬을 남기며, 복호기는 이 끝점들을 짝지어 가장 그럴듯한 오류 사슬을 추정한다. 이 짝짓기에는 최소 가중치 완전 매칭 같은 [[복호 알고리즘]]이 쓰인다.
+모든 안정자는 서로 가환이므로 동시에 측정할 수 있고, 측정 결과(신드롬)는 데이터 큐비트를 직접 건드리지 않은 채 오류의 흔적만 드러낸다. 오류가 없으면 모든 안정자의 고유값은 $+1$이고, 어딘가에서 $-1$이 관측되면 그 부근에 오류가 일어났다는 신호가 된다. 단일 비트반전 오류나 위상반전 오류는 격자 위에서 끝점 쌍의 형태로 신드롬을 남기며, 복호기는 이 끝점들을 짝지어 가장 그럴듯한 오류 사슬을 추정한다. 이 짝짓기에는 [[Minimum-Weight Perfect Matching|최소 가중치 완전 매칭]] 같은 [[Decoder|복호 알고리즘]]이 쓰인다.
 
 부호의 성능을 지배하는 핵심 매개변수는 부호 거리 $d$이다. 거리는 논리 연산자를 이루는 가장 짧은 오류 사슬의 길이를 뜻하며, 거리 $d$인 부호는 $\lfloor (d-1)/2 \rfloor$개까지의 오류를 정정한다. 물리 오류율 $p$가 임계값 $p_{\mathrm{th}}$보다 작은 영역에서는 거리를 키울수록 논리 오류율 $p_L$이 지수적으로 떨어진다.
 
@@ -66,5 +72,6 @@ flowchart TD
 - [[Pauli Matrices]] 안정자 연산자 $A_v$와 $B_p$를 구성하는 파울리 $X$, $Z$의 곱의 기본 단위
 - [[Quantum Decoherence]] 오류정정이 맞서 싸우는 잡음의 근본 원인이자 부호가 필요한 이유
 - [[Qubit]] 데이터 큐비트와 측정 보조 큐비트로 격자를 채우는 기본 단위
-- [[Logical Qubit]] 다수의 물리 큐비트를 묶어 표면 부호가 보호해 내는 추상화 대상(작성 예정)
-- [[복호 알고리즘]] 신드롬에서 오류 사슬을 추정하는 최소 가중치 매칭 등의 복호 절차(작성 예정)
+- [[Logical Qubit]] 다수의 물리 큐비트를 묶어 표면 부호가 보호해 내는 추상화 대상
+- [[Decoder|복호 알고리즘]] 신드롬에서 오류 사슬을 추정하는 최소 가중치 매칭 등의 복호 절차
+- [[Minimum-Weight Perfect Matching]] 결함 끝점을 짝지어 가장 그럴듯한 오류 사슬을 찾는 표면 부호의 표준 복호기

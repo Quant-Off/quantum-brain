@@ -1,6 +1,6 @@
 ---
 title: Dilithium (ML-DSA)
-aliases: [ML-DSA, CRYSTALS-Dilithium, 딜리시움, 딜리튬]
+aliases: [ML-DSA, CRYSTALS-Dilithium, 딜리시움, 딜리튬, FIPS 204]
 type: concept
 status: budding
 domain: post-quantum-cryptography

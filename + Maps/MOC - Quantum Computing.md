@@ -9,7 +9,7 @@ tags:
   - algorithm/grover
   - concept/superposition
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-06-05
 up: "[[MOC - Foundations of Quantum Information]]"
 ---
 
@@ -37,6 +37,14 @@ up: "[[MOC - Foundations of Quantum Information]]"
 알고리즘 본체와 서브루틴, 표적 문제는 전용 지도 [[MOC - Quantum Algorithms]]에 정식으로 모은다. 이 지도에서는 계산 모형 위에서 양자성을 속도 이득으로 바꾸는 대표 사례만 진입점으로 둔다.
 - [[Shor's Algorithm]] 정수 인수분해와 이산로그를 다항 시간에 푸는 알고리즘
 - [[Grover's Algorithm]] 비정렬 탐색을 제곱근으로 가속하는 알고리즘
+
+## 대안 계산 모형
+- [[Measurement-Based Quantum Computing]] 얽힌 자원 상태에 적응적 측정만으로 계산하는 모형
+- [[Adiabatic Quantum Computation]] 단열 정리를 따라 바닥 상태로 답을 인코딩하는 연속 시간 모형
+- [[Quantum Annealing]] 단열 모형을 완화해 최적화 문제의 저에너지 해를 탐색하는 방식
+
+## 계산 능력의 경계
+- [[Quantum Supremacy]] 고전 계산으로 사실상 모사 불가능한 작업을 보이는 우월성 실증
 
 ## 관련 MOC
 - [[MOC - Foundations of Quantum Information]] 상태와 측정 공준 등 토대 층
